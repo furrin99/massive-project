@@ -1,0 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: $fs-1;
+  font-weight: $fw-1;
+  color: $color-black-2;
+  line-height: $line-height-0;
+}
+ul {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  outline: none;
+}
+
+a {
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+h2,
+h3 {
+  @include textStyle1($fs-3, $fw-1, $color-black-0);
+  letter-spacing: $letter-spacing-3 + 1;
+  line-height: $line-height-0;
+}
+
+.section-padding {
+  padding: $pd-2 0;
+}
+// RESPONSIVE
+@include responsiveDesktopFirst("medium") {
+  .section-padding {
+    padding: $pd-3 0;
+  }
+  button {
+    font-size: $fs-0 - 1 !important;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  h2 {
+    font-size: $fs-1 + 3;
+  }
+}

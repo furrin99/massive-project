@@ -1,0 +1,56 @@
+// RESPONSIVE BOOTSTRAP
+@include responsiveMobileFirst("small") {
+  .container {
+    max-width: 100%;
+  }
+}
+
+@include responsiveMobileFirst("medium") {
+  .container {
+    max-width: 750px;
+    margin: auto;
+  }
+}
+
+@include responsiveMobileFirst("large") {
+  .container {
+    max-width: 970px;
+  }
+}
+
+@include responsiveMobileFirst("extra-large") {
+  .container {
+    max-width: 1170px;
+  }
+}
+.col-reset {
+  padding-left: 30px;
+  padding-right: 30px;
+}
+.btn {
+  @extend %button-style;
+}
+// OWL CAROUSEL
+.owl-carousel.owl-theme {
+  .owl-item {
+    .item {
+      margin: $mg-9;
+    }
+  }
+  .owl-dots {
+    .owl-dot {
+      span {
+        width: 12px;
+        height: 12px;
+        background-color: $color-carousel-dot;
+        opacity: 0.5;
+      }
+      &.active {
+        span {
+          background-color: $color-carousel-dot;
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,42 @@
+.feedback {
+  border-bottom: 1px solid $color-feedback-border;
+  .feedback__content {
+    padding: 0 $pd-5;
+    .feedback__item {
+      text-align: center;
+      .feedback__thumb {
+        display: inline-block;
+        width: 100px;
+        margin-bottom: $mg-9;
+        img {
+          border-radius: 50%;
+        }
+      }
+      .feedback__comment {
+        @include textStyle2($fs-1 + 1, $color-gray-0);
+        font-style: italic;
+        line-height: $line-height-4;
+        margin-bottom: $mg-5;
+      }
+      .feedback__user {
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-3 + 1;
+        margin-top: $mg-4;
+        p:first-child {
+          @include textStyle2($fs-0 + 1, $color-black-3);
+        }
+        p:last-child {
+          @include textStyle2($fs-0 - 1, $color-feedback-2);
+        }
+      }
+    }
+  }
+
+  // RESPONSIVE
+  @media screen and (min-width: 1215px) {
+    .feedback__content {
+      width: 66.66666667%;
+      margin: auto;
+    }
+  }
+}

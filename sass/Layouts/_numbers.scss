@@ -1,0 +1,42 @@
+.numbers {
+  background-color: $color-black-4;
+  .numbers__content {
+    .numbers__item {
+      text-align: center;
+      color: $color-white-0;
+      padding: 0;
+      i {
+        font-size: $fs-4 + 1;
+        margin-right: $mg-4;
+      }
+      p {
+        display: inline-block;
+        @include textStyle3($fs-4 + 1, $fw-1);
+        letter-spacing: $letter-spacing-3 + 1;
+      }
+      h3 {
+        @include textStyle1($fs-1, $fw-1, $color-white-0);
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-3;
+        margin-top: $mg-4;
+      }
+    }
+  }
+  //Responsive
+  @include responsiveDesktopFirst("large") {
+    .numbers__content {
+      .numbers__item {
+        padding: $pd-5 0;
+      }
+    }
+  }
+  @include responsiveDesktopFirst("medium") {
+    .numbers__content {
+      .numbers__item {
+        p {
+          font-size: $fs-3 + 2;
+        }
+      }
+    }
+  }
+}

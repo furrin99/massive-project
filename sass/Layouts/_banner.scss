@@ -1,0 +1,31 @@
+.banner {
+  height: 100vh;
+  background-image: url("../images/banner.jpeg");
+  @extend %background-img;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .banner__content {
+    text-align: center;
+    text-transform: uppercase;
+    h1 {
+      @include textStyle1($fs-5, $fw-0, $color-white-0);
+      letter-spacing: $letter-spacing-0;
+      line-height: normal;
+    }
+    h2 {
+      @include textStyle1($fs-2, $fw-1, $color-white-0);
+      letter-spacing: $letter-spacing-1;
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .banner__content {
+      h1 {
+        font-size: $fs-6;
+      }
+      h2 {
+        font-size: $fs-2 - 2;
+      }
+    }
+  }
+}

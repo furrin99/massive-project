@@ -1,0 +1,35 @@
+.cover {
+  background-image: url(../images/cover.jpeg);
+  @extend %background-img;
+  &.section-padding {
+    padding: $pd-10 0;
+  }
+  .cover__content {
+    text-align: center;
+    .cover__text {
+      text-transform: uppercase;
+      span {
+        @include textStyle2($fs-1 + 1, $color-yellow-0);
+        letter-spacing: $letter-spacing-2;
+      }
+      h1 {
+        @include textStyle1($fs-4 + 1, $fw-1, $color-white-0);
+        letter-spacing: $letter-spacing-3 + 1;
+        line-height: $line-height-0;
+      }
+    }
+    .cover__btn {
+      margin-top: $mg-6;
+    }
+  }
+  //Responsive
+  @include responsiveDesktopFirst("medium") {
+    .cover__content {
+      .cover__text {
+        h1 {
+          font-size: $fs-3 + 2;
+        }
+      }
+    }
+  }
+}

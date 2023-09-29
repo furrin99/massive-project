@@ -1,0 +1,184 @@
+header {
+  width: 100%;
+  position: fixed;
+  z-index: 1000;
+  .massiveNavbar {
+    justify-content: space-between;
+    background-color: $color-header;
+    padding: 0 $pd-5;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    .navbar-brand {
+      display: flex;
+      align-items: center;
+      height: 50px;
+      padding: 0;
+      margin-right: $mg-5;
+      img {
+        height: 50px;
+        display: inline-block;
+        padding: $pd-8 0;
+      }
+    }
+    .navbar-toggler {
+      padding: $pd-9 0;
+      i {
+        @include textStyle2($fs-3 - 1, $color-white-0);
+      }
+      &:focus {
+        box-shadow: none;
+      }
+    }
+    #navbarMassive {
+      background-color: $color-white-0;
+      flex-grow: 0;
+      .nav-item,
+      .nav-divider {
+        margin-left: $mg-0;
+      }
+      .nav-link {
+        @include textStyle1($fs-0, $fw-1, $color-black-0);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-top: 1px solid $color-white-1;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing-3 - 0.5;
+        padding: 0 0 0 $pd-1;
+        i {
+          font-size: $fs-0 - 1;
+          margin-right: $mg-0 + 3;
+        }
+        &.active,
+        &:focus,
+        &:hover {
+          color: $color-yellow-0;
+        }
+        span {
+          border-left: 1px solid $color-white-2;
+          font-size: $fs-2 + 2;
+          text-align: center;
+          padding: $pd-8 + 3.5 $pd-1 + 4;
+        }
+      }
+      .nav-item:last-child .nav-link {
+        border-bottom: 1px solid $color-white-1;
+      }
+    }
+  }
+  // RESPONSIVE
+  @media screen and (max-height: 414px) {
+    .massiveNavbar {
+      .navbar-brand {
+        img {
+          height: 46px;
+        }
+      }
+      #navbarMassive {
+        .nav-link {
+          line-height: $line-height-4 - 1;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    box-shadow: none;
+    .massiveNavbar {
+      &.resize-header {
+        height: 100px;
+        background-color: transparent;
+        &.sz-top--is-visible {
+          height: 60px;
+          background-color: $color-header;
+        }
+      }
+      .navbar-brand {
+        height: 100%;
+        margin-right: 0;
+      }
+      #navbarMassive {
+        background-color: transparent;
+        .nav-link {
+          display: block;
+          border: none;
+          color: $color-white-0;
+          &.active,
+          &:focus,
+          &:hover {
+            color: $color-yellow-0;
+          }
+          span {
+            border: none;
+            font-size: $fs-0;
+            padding: 0;
+            margin-left: $mg-0 + 1;
+          }
+        }
+        .nav-item:last-child .nav-link {
+          border: none;
+        }
+        .nav-divider {
+          @include textStyle2($fs-0, $color-white-0);
+          text-align: center;
+          padding-left: $pd-1;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 788px) {
+    .massiveNavbar {
+      padding: 0 $pd-1;
+    }
+  }
+
+  @media screen and (min-width: 769px) and (max-width: 991.98px) {
+    .massiveNavbar {
+      #navbarMassive {
+        .nav-link {
+          i {
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+
+  @include responsiveMobileFirst("large") {
+    .massiveNavbar {
+      &.resize-header {
+        .navbar-brand {
+          img {
+            height: 96px;
+          }
+        }
+        &.sz-top--is-visible {
+          .navbar-brand {
+            img {
+              height: 100%;
+            }
+          }
+        }
+      }
+      #navbarMassive {
+        .nav-link,
+        .nav-divider {
+          padding: 0 $pd-0;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 992px) and (max-width: 1021.98px) {
+    .massiveNavbar {
+      &.resize-header {
+        .navbar-brand {
+          img {
+            height: 70px;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,34 @@
+.back-to-top {
+  .backToTop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    background-color: $color-rgba-7;
+    text-align: center;
+    color: $color-white-0;
+    transform: translateY(45px);
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.3s;
+    &.cd-top--is-visible {
+      transform: translateY(0);
+      visibility: visible;
+      opacity: 1;
+    }
+    &:hover,
+    &:focus {
+      color: $color-black-0;
+    }
+    &:hover {
+      background-color: $color-yellow-0;
+    }
+  }
+
+  // RESPONSIVE
+  @media screen and (max-width: 800px) {
+    display: none;
+  }
+}

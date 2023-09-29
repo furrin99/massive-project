@@ -1,0 +1,73 @@
+.intro {
+  background-image: url("../images/intro.png");
+  background-attachment: fixed;
+  .nav-item {
+    width: 100%;
+    margin-bottom: $mg-4;
+    .nav-link {
+      position: relative;
+      border-radius: 0;
+      background-color: $color-rgba-6;
+      text-align: center;
+      color: $color-dark;
+      padding: $pd-6 $pd-12;
+      cursor: pointer;
+      &:hover,
+      &.active {
+        background-color: $color-white-0;
+        color: $color-black-3;
+        &::after {
+          position: absolute;
+          bottom: -20px;
+          left: 50%;
+          transform: translateX(-50%);
+          content: "";
+          @include arrow(10px, down, $color-white-0);
+          opacity: 1;
+        }
+      }
+      i {
+        font-size: $fs-4 + 1;
+      }
+    }
+  }
+  .tab-pane {
+    line-height: $line-height-4;
+    padding: $pd-5 0;
+    .intro__title {
+      text-transform: uppercase;
+      letter-spacing: $letter-spacing-3 + 1;
+      margin-bottom: $mg-6;
+      p {
+        @include textStyle2($fs-0 + 1, $color-gray-0);
+      }
+      h3 {
+        font-size: $fs-2;
+      }
+    }
+  }
+
+  // RESPONSIVE
+  @include responsiveMobileFirst("medium") {
+    .intro__nav {
+      justify-content: space-between;
+      .nav-item {
+        width: 18%;
+        margin: 0;
+        .nav-link {
+          padding: $pd-6 $pd-6 + 5;
+        }
+      }
+    }
+  }
+
+  @media screen and (min-width: 769px) {
+    .tab-pane {
+      .intro__title {
+        h3 {
+          font-size: $fs-6;
+        }
+      }
+    }
+  }
+}

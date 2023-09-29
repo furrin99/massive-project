@@ -1,0 +1,32 @@
+%background-img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+%button-style {
+  border: 1px solid transparent;
+  border-radius: 0;
+  font-size: $fs-1 - 1;
+  line-height: $line-height-3;
+  letter-spacing: $letter-spacing-3;
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: $color-white-0;
+  padding: $pd-0 + 3 $pd-5;
+  transition: all 0.3s;
+}
+
+%hover-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border: 20px solid $color-rgba-0;
+  background-color: $color-rgba-1;
+  text-align: center;
+  opacity: 0;
+  transition: all 0.3s;
+}

@@ -1,0 +1,79 @@
+@mixin textStyle1($fs, $fw, $color) {
+  font-size: $fs;
+  font-weight: $fw;
+  color: $color;
+}
+
+@mixin textStyle2($fs, $color) {
+  font-size: $fs;
+  color: $color;
+}
+
+@mixin textStyle3($fs, $fw) {
+  font-size: $fs;
+  font-weight: $fw;
+}
+
+@mixin arrow($size, $direction, $color) {
+  display: inline-block;
+  border-style: solid;
+  border-color: transparent;
+  border-width: $size;
+  @if $direction == up {
+    border-bottom-color: $color;
+  } @else if $direction == down {
+    border-top-color: $color;
+  } @else if $direction == left {
+    border-right-color: $color;
+  } @else if $direction == right {
+    border-right-color: $color;
+  } @else {
+    @error "Unknown direction: #{$direction}";
+  }
+}
+@mixin showcasePosition($top, $left) {
+  top: $top;
+  left: $left;
+}
+
+@mixin buttonStyle($bg-color) {
+  background-color: $bg-color;
+}
+
+@mixin buttonHoverStyle($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+}
+
+@mixin buttonFocusStyle($bg-color, $color) {
+  background-color: $bg-color;
+  color: $color;
+}
+
+@mixin responsiveMobileFirst($screen) {
+  @if map-has-key($map: $breakpoints-min-width, $key: $screen) {
+    $value: map-get(
+      $map: $breakpoints-min-width,
+      $key: $screen,
+    );
+    @media screen and (min-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "`{$screen}` not found!";
+  }
+}
+
+@mixin responsiveDesktopFirst($screen) {
+  @if map-has-key($map: $breakpoints-max-width, $key: $screen) {
+    $value: map-get(
+      $map: $breakpoints-max-width,
+      $key: $screen,
+    );
+    @media screen and (max-width: $value) {
+      @content;
+    }
+  } @else {
+    @warn "`{$screen}` not found!";
+  }
+}
