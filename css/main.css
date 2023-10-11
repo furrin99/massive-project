@@ -874,8 +874,8 @@ footer {
 .btn--black {
   background-color: #222; }
   .btn--black:hover {
-    background-color: #d6b161;
-    color: white; }
+    background-color: #d6b161 !important;
+    color: white !important; }
   .btn--black:focus {
     background-color: #d6b161;
     color: white; }
@@ -883,8 +883,8 @@ footer {
 .btn--yellow {
   background-color: #d6b161; }
   .btn--yellow:hover {
-    background-color: white;
-    color: #222; }
+    background-color: white !important;
+    color: #222 !important; }
   .btn--yellow:focus {
     background-color: white;
     color: #222; }

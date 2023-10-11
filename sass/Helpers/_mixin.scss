@@ -41,8 +41,8 @@
 }
 
 @mixin buttonHoverStyle($bg-color, $color) {
-  background-color: $bg-color;
-  color: $color;
+  background-color: $bg-color !important;
+  color: $color !important;
 }
 
 @mixin buttonFocusStyle($bg-color, $color) {
